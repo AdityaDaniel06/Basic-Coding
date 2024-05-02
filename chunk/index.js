@@ -9,26 +9,28 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  let chunked = [];
-  let index = 0;
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
+  let subArr = [];
+  let i = 0;
+  while (i < array.length) {
+    subArr.push(array.slice(i, i + size));
+    i += size;
   }
-  return chunked;
+  return subArr;
 }
 
 module.exports = chunk;
 
 // Solution #1
-// function chunk(array, size) {
-// let chunked = [];
-// for (let ele of array) {
-//   const last = chunked[chunked.length - 1];
+// function chunk(arr, size) {
+// let chunkedArray = [];
+
+// for (let el of arr) {
+//   const last = chunkedArray[chunkedArray.length - 1]; to get the last element of the array
+
 //   if (!last || last.length === size) {
-//     chunked.push([ele]);
+//     chunkedArray.push([el]);
 //   } else {
-//     last.push(ele);
+//     last.push(el);
 //   }
 // }
 // return chunked;
