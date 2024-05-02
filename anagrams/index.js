@@ -69,8 +69,8 @@ function same2(arr1, arr2) {
 ///////////////////////////
 // Solution #2
 function anagram(stringA, stringB) {
-  if(cleanString(stringA) === cleanString(stringB)) return true;
-  
+ return cleanString(stringA) === cleanString(stringB);
+
 }
 function cleanString(str) {
   return  str.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
